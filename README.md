@@ -35,4 +35,3 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 - API routes: CRUD and task updates in `src/app/api/dashboards/*`.
 - Models: Mongoose schemas in `src/models`.
 - UI components: `src/components`.
-- Removed unused `src/context`, `src/hooks`, and `src/providers` in favor of Zustand.
