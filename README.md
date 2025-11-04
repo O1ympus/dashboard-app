@@ -29,8 +29,10 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Project structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- State management: Zustand store in `src/stores/DashboardStore.ts` manages the current dashboard and editing task.
+- API routes: CRUD and task updates in `src/app/api/dashboards/*`.
+- Models: Mongoose schemas in `src/models`.
+- UI components: `src/components`.
+- Removed unused `src/context`, `src/hooks`, and `src/providers` in favor of Zustand.
