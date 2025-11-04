@@ -1,11 +1,5 @@
 import mongoose from 'mongoose'
 
-const MONGODB_URI = process.env.MONGODB_URI as string
-
-if (!MONGODB_URI) {
-	throw new Error('Please define the MONGODB_URI environment variable')
-}
-
 let cached = (global as any).mongoose
 if (!cached) {
 	cached = (global as any).mongoose = { conn: null, promise: null }
@@ -13,9 +7,14 @@ if (!cached) {
 
 export async function connectToDatabase() {
 	if (cached.conn) return cached.conn
-	
+
+	const uri = process.env.MONGODB_URI as string
+	if (!uri) {
+		throw new Error('Please define the MONGODB_URI environment variable')
+	}
+
 	if (!cached.promise) {
-		cached.promise = mongoose.connect(MONGODB_URI, {
+		cached.promise = mongoose.connect(uri, {
 			dbName: 'dashboard_app',
 		}).then((mongoose) => mongoose)
 	}
