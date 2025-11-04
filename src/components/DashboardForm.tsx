@@ -18,7 +18,7 @@ export default function DashboardForm() {
     setIsLoading(true)
 
     try {
-      const res = await fetch('api/dashboards', {
+      const res = await fetch('/api/dashboards', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
