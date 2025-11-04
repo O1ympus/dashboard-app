@@ -19,7 +19,7 @@ export default function Header() {
       <div className={`flex w-full max-w-[1536px] items-center lg:gap-x-6`}>
         <nav className={`mr-4 flex w-full items-center justify-between lg:mx-auto`}>
           <Link
-            href={`/dashboards/${encodeURIComponent(currentDashboard?._id || '')}`}
+            href={currentDashboard?._id ? `/dashboards/${encodeURIComponent(currentDashboard._id)}` : '/'}
             className={`text-black`}
           >
             {currentDashboard?.name || 'DASHBOARD'}
