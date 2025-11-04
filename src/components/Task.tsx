@@ -15,7 +15,7 @@ export default function Task({ task, columnTitle }: Props) {
 
   return (
     <div
-      className={`mb-3 h-fit w-full rounded-sm bg-white p-3 shadow-sm dark:text-black`}
+      className={`mb-3 h-fit min-h-30 w-full rounded-sm bg-white p-3 shadow-sm dark:bg-[#383838] dark:text-white`}
       draggable
       onDragStart={handleDragStart}
     >

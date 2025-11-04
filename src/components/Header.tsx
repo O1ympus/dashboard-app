@@ -14,13 +14,17 @@ export default function Header() {
 
   return (
     <header
-      className={`sm:w-20dark:bg-[#1E1E1E] lg: mx-auto mb-9 flex h-[60px] items-center border-b border-[#E9EBF0] bg-[#F7F8FA] p-4 sm:h-20 sm:p-8 lg:justify-between 2xl:justify-center`}
+      className={`sm:w-20dark:bg-[#1E1E1E] lg: mx-auto mb-9 flex h-[60px] items-center border-b border-[#E9EBF0] bg-[#F7F8FA] p-4 sm:h-20 sm:p-8 lg:justify-between 2xl:justify-center dark:bg-[#1E1E1E]`}
     >
       <div className={`flex w-full max-w-[1536px] items-center lg:gap-x-6`}>
         <nav className={`mr-4 flex w-full items-center justify-between lg:mx-auto`}>
           <Link
-            href={currentDashboard?._id ? `/dashboards/${encodeURIComponent(currentDashboard._id)}` : '/'}
-            className={`text-black`}
+            href={
+              currentDashboard?._id
+                ? `/dashboards/${encodeURIComponent(currentDashboard._id)}`
+                : '/'
+            }
+            className={`text-black dark:text-white`}
           >
             {currentDashboard?.name || 'DASHBOARD'}
           </Link>

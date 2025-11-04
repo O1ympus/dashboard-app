@@ -41,7 +41,7 @@ export default function SearchBar() {
   return (
     <form
       onSubmit={handleSubmit}
-      className={`mb-10 flex h-12 w-full items-center justify-between rounded-sm bg-white px-4 py-3 lg:w-[520px]`}
+      className={`mb-10 flex h-12 w-full items-center justify-between rounded-sm bg-white px-4 py-3 lg:w-[520px] dark:bg-[#383838]`}
     >
       <Image src="/images/search-icon.svg" alt="Search Icon" width={24} height={24} />
 

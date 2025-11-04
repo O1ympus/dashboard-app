@@ -85,9 +85,11 @@ export default function UpdateTaskForm() {
   }
 
   return (
-    <div className="mx-auto flex w-fit flex-col items-center rounded-2xl bg-[#F6FBF9] px-4 py-6 text-center sm:px-[60px] sm:py-[50px] dark:bg-[#F6FBF9]/95">
-      <h1 className="mb-2 text-3xl font-bold text-[#212B27]">Update A Task</h1>
-      <p className="mb-5 max-w-[400px] text-lg text-[#212B27]">Update your task details below.</p>
+    <div className="mx-auto flex w-fit flex-col items-center rounded-2xl bg-[#F6FBF9] px-4 py-6 text-center sm:px-[60px] sm:py-[50px] dark:bg-[#383838]">
+      <h1 className="mb-2 text-3xl font-bold text-[#212B27] dark:text-white">Update A Task</h1>
+      <p className="mb-5 max-w-[400px] text-lg text-[#212B27] dark:text-white">
+        Update your task details below.
+      </p>
 
       <form onSubmit={handleSubmit} className="mx-auto flex w-full max-w-[600px] flex-col gap-8">
         <FormSelectInput selected={taskType} handleSelected={setTaskType} />
@@ -100,7 +102,7 @@ export default function UpdateTaskForm() {
         <button
           type="submit"
           disabled={isLoading}
-          className="mx-auto w-fit rounded-2xl bg-[#84C7AE] px-15 py-4 text-lg font-bold text-white dark:bg-[#84C7AE]/90"
+          className="mx-auto w-fit rounded-2xl bg-[#84C7AE] px-15 py-4 text-lg font-bold text-white dark:bg-[#BB86FC]"
         >
           {isLoading ? 'Updating...' : 'Update Task'}
         </button>

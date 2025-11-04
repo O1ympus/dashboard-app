@@ -12,8 +12,8 @@ export default function MenuLink({ href, linkText, isActive }: Props) {
     <Link
       href={href}
       className={cn({
-        'text-black': isActive,
-        'text-[#7A8699] dark:text-gray-500': !isActive,
+        'text-black dark:text-white': isActive,
+        'text-[#7A8699] dark:text-gray-400': !isActive,
       })}
     >
       {linkText}

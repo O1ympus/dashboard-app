@@ -14,9 +14,7 @@ export async function connectToDatabase() {
 	}
 
 	if (!cached.promise) {
-		cached.promise = mongoose.connect(uri, {
-			dbName: 'dashboard_app',
-		}).then((mongoose) => mongoose)
+		cached.promise = mongoose.connect(uri).then((mongoose) => mongoose)
 	}
 	
 	cached.conn = await cached.promise

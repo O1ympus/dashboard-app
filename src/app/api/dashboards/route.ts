@@ -31,6 +31,10 @@ export async function POST(request: Request) {
     const data = await request.json()
     console.log('Received data:', data)
 
+    if (!data?.name || typeof data.name !== 'string' || !data.name.trim()) {
+      return NextResponse.json({ error: 'Name is required' }, { status: 400 })
+    }
+
     const dashboard = await Dashboard.create(data)
     console.log('Created:', dashboard)
 

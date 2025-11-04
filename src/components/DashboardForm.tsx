@@ -45,10 +45,12 @@ export default function DashboardForm() {
 
   return (
     <div
-      className={`mx-auto flex w-fit flex-col items-center rounded-2xl bg-[#F6FBF9] p-4 text-center sm:px-[60px] sm:py-[50px] dark:bg-[#F6FBF9]/95`}
+      className={`mx-auto flex w-fit flex-col items-center rounded-2xl bg-[#F6FBF9] p-4 text-center sm:px-[60px] sm:py-[50px] dark:bg-[#383838]`}
     >
-      <h1 className={`mb-2 text-3xl font-bold text-[#212B27]`}>Create A Dashboard</h1>
-      <p className={`mb-5 max-w-[400px] text-lg text-[#212B27]`}>
+      <h1 className={`mb-2 text-3xl font-bold text-[#212B27] dark:text-white`}>
+        Create A Dashboard
+      </h1>
+      <p className={`mb-5 max-w-[400px] text-lg text-[#212B27] dark:text-white`}>
         Create a dashboard to enjoy all the services without any ads for free!
       </p>
       <form onSubmit={handleSubmit} className={`mx-auto flex w-full max-w-[600px] flex-col gap-8`}>
@@ -56,7 +58,7 @@ export default function DashboardForm() {
         <button
           type="submit"
           disabled={isLoading}
-          className={`mx-auto w-fit cursor-pointer rounded-2xl bg-[#84C7AE] px-15 py-4 text-sm font-bold text-white sm:text-lg dark:bg-[#84C7AE]/90`}
+          className={`mx-auto w-fit cursor-pointer rounded-2xl bg-[#84C7AE] px-15 py-4 text-sm font-bold text-white sm:text-lg dark:bg-[#BB86FC]`}
         >
           Create Dashboard
         </button>

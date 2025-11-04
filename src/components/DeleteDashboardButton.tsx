@@ -30,8 +30,9 @@ export default function DeleteDashboardButton() {
         throw new Error('Failed to delete dashboard')
       }
 
-      setCurrentDashboard(null)
       await router.replace('/')
+
+      setCurrentDashboard(null)
     } catch (err) {
       console.error(err)
       alert('Error deleting dashboard')
@@ -44,7 +45,7 @@ export default function DeleteDashboardButton() {
     <button
       onClick={handleDelete}
       disabled={isDeleting}
-      className={`w-full cursor-pointer rounded-2xl bg-red-400 px-6 py-3 text-lg font-bold text-white hover:bg-red-600 disabled:opacity-70 sm:block sm:w-[520px]`}
+      className={`w-full cursor-pointer rounded-2xl bg-red-500 px-6 py-3 text-lg font-bold text-white hover:bg-red-600 disabled:opacity-70 sm:block sm:w-[520px] dark:bg-red-700/60`}
     >
       {isDeleting ? 'Deleting...' : 'Delete Dashboard'}
     </button>
