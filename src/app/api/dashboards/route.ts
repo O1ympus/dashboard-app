@@ -3,20 +3,25 @@ import { Dashboard } from '@/models/Dashboard'
 import { connectToDatabase } from '@/lib/mongodb'
 
 export async function GET(req: Request) {
-  await connectToDatabase()
-  const { searchParams } = new URL(req.url)
-  const query = searchParams.get('query')
+  try {
+    await connectToDatabase()
+    const { searchParams } = new URL(req.url)
+    const query = searchParams.get('query')
 
-  let dashboards
-  if (query) {
-    dashboards = await Dashboard.find({
-      name: { $regex: query, $options: 'i' },
-    }).lean()
-  } else {
-    dashboards = await Dashboard.find().lean()
+    let dashboards
+    if (query) {
+      dashboards = await Dashboard.find({
+        name: { $regex: query, $options: 'i' },
+      }).lean()
+    } else {
+      dashboards = await Dashboard.find().lean()
+    }
+
+    return NextResponse.json(dashboards)
+  } catch (err) {
+    console.error('GET /api/dashboards error:', err)
+    return NextResponse.json({ error: (err as Error).message }, { status: 500 })
   }
-
-  return NextResponse.json(dashboards)
 }
 
 export async function POST(request: Request) {
